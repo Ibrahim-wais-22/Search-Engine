@@ -1,0 +1,27 @@
+{% extends 'templates/base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+<header>
+    <form method="GET">
+
+        <div style=" border-radius: 5px; padding: 20px" >
+            <button type="submit" style="border-radius: 5px;">إبـحـث</button>
+            <input name="q" type="text" >
+            <hr>
+        </div>
+    </form>
+</header>
+
+<h5>تم العثور على 0 من النتائج</h5>   
+
+<h1>عفوا ..لم يتم العثور على نتائج   الرجاء المحاولة مرة اخرى</h1>
+<h2>حاول كتابة كلمات اكثر وضوحا .. او قم بالتحقق من الاملاء</h2>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock body %}

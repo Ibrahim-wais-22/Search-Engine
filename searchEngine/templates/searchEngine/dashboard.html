@@ -1,0 +1,88 @@
+{% extends 'templates/base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+
+
+
+                   
+                    
+<h3 style='text-align: center;'> لوحة السجلات </h3>
+<div class="container mr-5">
+    <div class='row'>
+        
+        {% comment %} <div class=" col-6 ml-6 sm-4"> {% endcomment %}
+         <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">اسم المدير</th>
+                    <th scope="col">الايميل</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for a in admins %}
+                    <tr>
+                        <th scope="row">{{a.id}}</th>
+                        <td>{{a.username}}</td>
+                        <td>{{a.email}}</td>
+                    </tr>
+                {% endfor %}
+                
+            </tbody>
+            </table>
+
+       
+        <div class=" col-6 ml-6 sm-6  ">
+      
+       <table class="table ">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">الاسم</th>
+                <th scope="col">التعليق</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for add in adds %}
+                    <tr>
+                    <th scope="row">{{add.id}}</th>
+                    <td>{{add.name}}</td>
+                    <td>{{add.text}}</td>
+                    </tr>
+                {% endfor %}
+                
+            </tbody>
+            </table>
+
+        </div>
+            <div class=" col-6 ml-6 sm-6 ">
+                <table class="table ">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">الرابط</th>
+                    <th scope="col">العنوان</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for t in title2 %}
+                        <tr>
+                        <th scope="row">{{t.id}}</th>
+                        <td>{{t.url}}</td>
+                        <td>{{t.title}}</td>
+                        </tr>
+                    {% endfor %}
+                    
+                </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+{% endblock body %}

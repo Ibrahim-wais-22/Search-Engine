@@ -1,0 +1,36 @@
+{% extends 'templates/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+ {% block body %}
+ 
+
+   <header>
+       <form method="GET">
+
+           <div style=" border-radius: 5px; padding: 20px" >
+               <button type="submit" style="border-radius: 5px;">إبـحـث</button>
+               <input name="q" type="text" >
+               <hr>
+           </div>
+       </form>
+   </header>
+
+   {% comment %} <div class="continer border border-success m-2"> {% endcomment %}
+                            
+                       
+    <h5>تم العثور على {{title.count}} من النتائج</h5>                    
+    {% for i in title %}
+        <div class="card  m-1 p-2"  >
+        
+            <a href = "{{i.url}}" target="_blank"> <h5 class="card-title  rounded p-2"> {{i.title}}</h5></a>
+            <p class="card-text">
+            {{ i.discraption|safe|truncatewords:"20"|linebreaks}}
+            </p>
+        </div>
+    {% endfor %}
+                           
+
+      
+       
+   
+{% endblock body %}

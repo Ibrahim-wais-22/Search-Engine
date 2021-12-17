@@ -1,0 +1,16 @@
+{% extends 'templates/base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+<div class="container">
+  <div class="card m-2">
+  <h1 class="card_title text-center">إضافة اقتراح</h1>
+    <form method="get" >
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <input type="submit" value="ارسل" class="btn btn-primary boxed-btn3 w-100 mt-2" />
+    </form>  
+  </div>
+</div>
+
+
+{% endblock body %}
